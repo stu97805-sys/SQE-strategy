@@ -1,0 +1,8 @@
+name = "sqe-strategy-analysis-platform"
+compatibility_date = "2026-03-23"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sqe-strategy-db"
+database_id = "f9a7c3f3-2d99-4555-9448-5a2e18f03070"

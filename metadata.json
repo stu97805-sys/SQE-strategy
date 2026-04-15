@@ -1,0 +1,5 @@
+{
+  "name": "SQE Strategy Analysis Platform",
+  "description": "A comprehensive platform for Supplier Quality Engineers to analyze defect data and generate 8D or simple quality reports using AI.",
+  "requestFramePermissions": []
+}
