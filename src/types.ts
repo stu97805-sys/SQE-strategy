@@ -5,6 +5,7 @@ export interface QualityCaseFile {
   name: string;
   type: string;
   data: string; // base64
+  extractedText?: string;
 }
 
 export interface QualityMetrics {
@@ -13,12 +14,27 @@ export interface QualityMetrics {
   defectType: string;
 }
 
+export interface SortingCase {
+  id: string;
+  date: string;
+  sortingQty: number;
+  ngQty: number;
+  defectRate: number;
+  lfLotNo?: string;
+  pn?: string;
+  aseRtSch?: string;
+}
+
 export interface ReferenceDoc {
   id: string;
   name: string;
   type: string;
   content: string; // base64 or text
+  extractedText?: string;
   addedAt: string;
+  sourceCaseId?: string;
+  sourceKind?: 'manual' | 'case_attachment' | 'generated_report';
+  autoArchived?: boolean;
 }
 
 export interface QualityCase {
@@ -30,9 +46,10 @@ export interface QualityCase {
   affectedBatches: string;
   severity: Severity;
   date: string;
-  status: 'Pending' | 'Analyzing' | 'Completed';
+  status: 'Tracking' | 'Analyzing' | 'Complete';
   report?: string;
   reportType?: ReportType;
+  reportReference?: string;
   files?: QualityCaseFile[];
   industry?: 'General' | 'CNC';
   metrics?: QualityMetrics[];

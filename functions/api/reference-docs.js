@@ -7,6 +7,10 @@ export async function onRequestPost(context) {
     name: body.name,
     type: body.type,
     content: body.content,
+    extractedText: body.extractedText,
+    sourceCaseId: body.sourceCaseId,
+    sourceKind: body.sourceKind,
+    autoArchived: Boolean(body.autoArchived),
     addedAt: new Date().toISOString(),
   };
 
